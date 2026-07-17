@@ -6,93 +6,111 @@
 <title>臺灣中小學 AI 教育政策系譜</title>
 <style>
 :root{
-  --bg:#F6F4EF; --ink:#20302c; --muted:#5f6f6a; --line:#d9d3c7; --card:#fffdf8;
-  --accent:#2F5751;
-  --ey:#5c6bc0;        /* executive-yuan */
-  --nstc:#00897b;      /* nstc */
-  --moda:#3f7cac;      /* moda */
-  --k12:#2F5751;       /* moe-k12 */
-  --teach:#b5722c;     /* moe-teacher */
-  --maxw:1080px;
+  --bg:#f4f2ec; --panel:#fbfaf6; --ink:#22302c; --soft:#4d5a55; --muted:#7c877f; --line:#e0dacd; --hair:#ece7db;
+  --accent:#2f5751;
+  --ey:#5561b3; --nstc:#0f8a7a; --moda:#3577a8; --k12:#2f5751; --teach:#b06a28; --civ:#8b8f88;
+  --maxw:960px;
 }
 @media (prefers-color-scheme:dark){
-  :root{--bg:#141a19;--ink:#e9e6df;--muted:#a3b0ab;--line:#33403c;--card:#1c2422;--accent:#7fb3aa;
-    --ey:#9aa4e6;--nstc:#4db6a4;--moda:#7aa9d0;--k12:#7fb3aa;--teach:#d6a35e;}
+  :root{--bg:#121817;--panel:#1a2220;--ink:#e9e6df;--soft:#c3ccc6;--muted:#8fa099;--line:#2e3a36;--hair:#232d2a;
+    --accent:#82b6ac;--ey:#98a2e8;--nstc:#4fc0ae;--moda:#7bb0dd;--k12:#82b6ac;--teach:#d9a45e;--civ:#9aa09a;}
 }
-:root[data-theme="dark"]{--bg:#141a19;--ink:#e9e6df;--muted:#a3b0ab;--line:#33403c;--card:#1c2422;--accent:#7fb3aa;
-  --ey:#9aa4e6;--nstc:#4db6a4;--moda:#7aa9d0;--k12:#7fb3aa;--teach:#d6a35e;}
-:root[data-theme="light"]{--bg:#F6F4EF;--ink:#20302c;--muted:#5f6f6a;--line:#d9d3c7;--card:#fffdf8;--accent:#2F5751;
-  --ey:#5c6bc0;--nstc:#00897b;--moda:#3f7cac;--k12:#2F5751;--teach:#b5722c;}
+:root[data-theme="dark"]{--bg:#121817;--panel:#1a2220;--ink:#e9e6df;--soft:#c3ccc6;--muted:#8fa099;--line:#2e3a36;--hair:#232d2a;
+  --accent:#82b6ac;--ey:#98a2e8;--nstc:#4fc0ae;--moda:#7bb0dd;--k12:#82b6ac;--teach:#d9a45e;--civ:#9aa09a;}
+:root[data-theme="light"]{--bg:#f4f2ec;--panel:#fbfaf6;--ink:#22302c;--soft:#4d5a55;--muted:#7c877f;--line:#e0dacd;--hair:#ece7db;
+  --accent:#2f5751;--ey:#5561b3;--nstc:#0f8a7a;--moda:#3577a8;--k12:#2f5751;--teach:#b06a28;--civ:#8b8f88;}
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
-  font-family:"Noto Sans TC","PingFang TC","Heiti TC",system-ui,sans-serif;line-height:1.7;}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:48px 24px 80px;}
-.masthead{border-top:5px solid var(--accent);padding-top:20px;margin-bottom:8px;}
-.eyebrow{font-size:13px;letter-spacing:3px;color:var(--teach);font-weight:700;}
-h1{font-family:"Noto Serif TC","Songti TC",serif;font-size:33px;line-height:1.3;margin:10px 0 6px;font-weight:800;letter-spacing:1px;}
-.sub{color:var(--muted);font-size:15px;max-width:780px;}
-.meta{color:var(--muted);font-size:13px;margin-top:14px;border-top:1px solid var(--line);padding-top:12px;}
-.legend{display:flex;flex-wrap:wrap;gap:14px;margin:26px 0 4px;}
-.legend span{font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:7px;}
-.dot{width:11px;height:11px;border-radius:50%;display:inline-block;}
+  font-family:"Noto Sans TC","PingFang TC","Heiti TC",system-ui,sans-serif;
+  font-size:15.5px;line-height:1.85;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:52px 24px 90px;}
+a{color:inherit;}
+
+/* masthead */
+.masthead{border-top:4px solid var(--accent);padding-top:24px;}
+.eyebrow{font-size:12.5px;letter-spacing:4px;color:var(--teach);font-weight:700;}
+h1{font-family:"Noto Serif TC","Songti TC",serif;font-size:36px;line-height:1.28;margin:12px 0 8px;font-weight:800;letter-spacing:.5px;}
+.lede{color:var(--soft);font-size:16px;max-width:44em;margin:0;}
+.meta{color:var(--muted);font-size:12.5px;margin-top:18px;border-top:1px solid var(--hair);padding-top:14px;line-height:1.7;}
+
+/* legend */
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin:22px 0 6px;padding:14px 16px;background:var(--panel);border:1px solid var(--hair);border-radius:10px;}
+.legend b{width:100%;font-size:11.5px;letter-spacing:2px;color:var(--muted);font-weight:700;margin-bottom:2px;}
+.legend span{font-size:13px;color:var(--soft);display:inline-flex;align-items:center;gap:7px;}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block;flex:none;}
 .d-ey{background:var(--ey)}.d-nstc{background:var(--nstc)}.d-moda{background:var(--moda)}
-.d-k12{background:var(--k12)}.d-teach{background:var(--teach)}
+.d-k12{background:var(--k12)}.d-teach{background:var(--teach)}.d-civ{background:var(--civ)}
 
-.phase{margin-top:44px;}
-.phase-h{font-family:"Noto Serif TC",serif;font-size:21px;font-weight:800;color:var(--accent);
-  border-bottom:1.5px solid var(--line);padding-bottom:8px;margin-bottom:6px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;}
-.phase-h .who{font-size:13.5px;color:var(--muted);font-weight:600;}
-.phase-note{color:var(--muted);font-size:14px;margin:0 0 20px;}
+/* section header */
+.phase{margin-top:52px;}
+.phase-h{display:flex;align-items:center;gap:14px;margin-bottom:4px;}
+.phase-h .num{flex:none;width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;
+  font-family:"Noto Serif TC",serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;}
+.phase-h h2{font-family:"Noto Serif TC",serif;font-size:23px;font-weight:800;margin:0;color:var(--ink);letter-spacing:.5px;}
+.phase-who{font-size:13px;color:var(--muted);margin:2px 0 0 48px;font-weight:600;}
+.phase-note{color:var(--soft);font-size:14.5px;margin:12px 0 22px 48px;max-width:42em;}
 
-.tl{position:relative;padding-left:34px;}
-.tl::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:var(--line);}
+/* timeline */
+.tl{position:relative;padding-left:48px;}
+.tl::before{content:"";position:absolute;left:16px;top:8px;bottom:8px;width:2px;background:var(--line);}
 .node{position:relative;margin-bottom:20px;}
-.node::before{content:"";position:absolute;left:-30px;top:7px;width:13px;height:13px;border-radius:50%;
-  background:var(--card);border:3px solid var(--dotc,var(--k12));}
-.card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--dotc,var(--k12));
-  border-radius:2px;padding:13px 17px;}
-.card .date{font-size:12.5px;font-weight:700;letter-spacing:.4px;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
-.card .date .dt{color:var(--dotc,var(--k12));}
-.agency{font-size:11px;font-weight:700;padding:1px 8px;border-radius:999px;color:#fff;background:var(--dotc,var(--k12));}
-.card h3{margin:4px 0 6px;font-size:16.5px;font-weight:700;line-height:1.4;}
-.card p{margin:0;font-size:14.5px;color:var(--ink);}
-.card .src{margin-top:8px;font-size:12px;color:var(--muted);}
-.srclink{color:var(--dotc,var(--k12));text-decoration:none;border-bottom:1px dotted currentColor;}
-.srclink:hover{border-bottom-style:solid;}
+.node::before{content:"";position:absolute;left:-40px;top:20px;width:14px;height:14px;border-radius:50%;
+  background:var(--panel);border:3px solid var(--dotc,var(--k12));z-index:1;}
+.card{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--dotc,var(--k12));
+  border-radius:8px;padding:16px 22px 15px;transition:box-shadow .18s ease, transform .18s ease;}
+.card:hover{box-shadow:0 6px 22px rgba(20,40,36,.08);}
+.chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:7px;}
+.chip-date{font-size:12.5px;font-weight:700;letter-spacing:.4px;color:var(--dotc,var(--k12));}
+.chip-org{font-size:11px;font-weight:700;padding:2px 9px;border-radius:999px;color:#fff;background:var(--dotc,var(--k12));letter-spacing:.3px;}
+.chip-org.alt{background:var(--teach);}
+.card h3{margin:0 0 7px;font-size:17.5px;font-weight:700;line-height:1.45;letter-spacing:.2px;}
+.card p{margin:0;font-size:14.7px;color:var(--soft);line-height:1.85;}
+.src{margin-top:11px;padding-top:9px;border-top:1px dashed var(--hair);font-size:12px;color:var(--muted);}
+.src a{color:var(--dotc,var(--k12));text-decoration:none;border-bottom:1px solid transparent;}
+.src a:hover{border-bottom-color:currentColor;}
+.src a::after{content:" ↗";font-size:10px;opacity:.7;}
 .n-ey{--dotc:var(--ey)}.n-nstc{--dotc:var(--nstc)}.n-moda{--dotc:var(--moda)}
-.n-k12{--dotc:var(--k12)}.n-teach{--dotc:var(--teach)}.n-civ{--dotc:#8a8f8c}
-.d-civ{background:#8a8f8c}
-.origin{margin:22px 0 0;padding:16px 20px;border:1px solid var(--line);border-radius:5px;
-  background:linear-gradient(135deg,rgba(0,137,123,.07),rgba(138,143,140,.05));}
-.origin .oh{font-family:"Noto Serif TC",serif;font-size:16px;font-weight:800;color:var(--nstc);margin-bottom:2px;}
-.origin .on{font-size:13px;color:var(--muted);margin-bottom:12px;}
-.milestone .card{background:linear-gradient(100deg,color-mix(in srgb,var(--dotc) 8%,var(--card)),var(--card));}
+.n-k12{--dotc:var(--k12)}.n-teach{--dotc:var(--teach)}.n-civ{--dotc:var(--civ)}
+.node.key .card{background:linear-gradient(105deg,color-mix(in srgb,var(--dotc) 9%,var(--panel)),var(--panel));border-left-width:5px;}
+.node.key .card h3::before{content:"◆ ";color:var(--dotc,var(--k12));font-size:12px;vertical-align:2px;}
 
-.family{background:linear-gradient(135deg,rgba(47,87,81,.08),rgba(181,114,44,.06));
-  border:1px solid var(--line);border-radius:4px;padding:18px 20px;margin:22px 0;}
-.family h3{margin:0 0 6px;font-size:17px;color:var(--accent);font-family:"Noto Serif TC",serif;}
-.family ul{margin:8px 0 0;padding-left:20px;font-size:14px;}
-.family li{margin-bottom:5px;}
-.family a{color:var(--k12);}
+/* origin (前史) */
+.origin{margin:24px 0 0;padding:8px 22px 20px;border:1px solid var(--line);border-radius:12px;
+  background:linear-gradient(140deg,color-mix(in srgb,var(--nstc) 8%,var(--panel)),var(--panel));}
+.origin .oh{display:flex;align-items:baseline;gap:10px;margin:16px 0 2px;}
+.origin .oh h2{font-family:"Noto Serif TC",serif;font-size:19px;font-weight:800;margin:0;color:var(--nstc);}
+.origin .oh span{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:1px;}
+.origin .on{font-size:13.5px;color:var(--soft);margin:0 0 16px;max-width:44em;}
 
-.caveat{margin-top:38px;background:var(--card);border:1px dashed var(--teach);border-radius:4px;padding:18px 22px;}
-.caveat h3{margin:0 0 10px;font-size:15px;color:var(--teach);}
-.caveat ul{margin:0;padding-left:20px;font-size:13.5px;color:var(--muted);}
-.caveat li{margin-bottom:6px;}
-.foot{margin-top:34px;border-top:1px solid var(--line);padding-top:14px;font-size:12.5px;color:var(--muted);}
+/* family box */
+.family{margin:16px 0 6px 48px;padding:18px 22px;border:1px solid var(--line);border-radius:10px;
+  background:linear-gradient(135deg,color-mix(in srgb,var(--k12) 7%,var(--panel)),var(--panel));}
+.family h3{margin:0 0 8px;font-size:16px;color:var(--accent);font-family:"Noto Serif TC",serif;font-weight:800;}
+.family ul{margin:0;padding-left:20px;font-size:14px;color:var(--soft);}
+.family li{margin-bottom:8px;line-height:1.8;}
+.family a{color:var(--k12);text-decoration:none;border-bottom:1px solid var(--hair);}
+.family a:hover{border-bottom-color:var(--k12);}
+
+.foot{margin-top:44px;border-top:1px solid var(--hair);padding-top:16px;font-size:12.5px;color:var(--muted);line-height:1.7;}
+.foot code{background:var(--hair);padding:1px 6px;border-radius:4px;font-size:11.5px;}
+@media(max-width:640px){
+  h1{font-size:28px;} .wrap{padding:36px 16px 60px;}
+  .phase-note,.phase-who{margin-left:0;} .family{margin-left:0;}
+}
 </style>
 </head>
 <body>
 <div class="wrap">
 
   <header class="masthead">
-    <div class="eyebrow">臺灣 · AI 教育政策</div>
+    <div class="eyebrow">臺灣　AI 教育政策</div>
     <h1>臺灣中小學 AI 教育政策系譜</h1>
-    <p class="sub">從行政院層級的國家 AI 戰略與專法，到教育部推動的數位學習、AI 素養框架與師資培育，梳理臺灣中小學 AI 教育政策的演進脈絡。每一項標註主責機關，並附正式出處連結。</p>
-    <div class="meta">整合行政院、國家科學及技術委員會、數位發展部，以及教育部資訊及科技教育司與師資培育及藝術教育司之公開政策文件編成。日期以民國紀年為主、西元對照。整理日期：2026-07-16。</div>
+    <p class="lede">從行政院層級的國家 AI 戰略與專法，到教育部推動的數位學習、AI 素養框架與師資培育，梳理臺灣中小學 AI 教育政策的演進脈絡。每一項標註主責機關，並附官方出處連結。</p>
+    <div class="meta">整合行政院、國家科學及技術委員會、數位發展部，以及教育部資訊及科技教育司與師資培育及藝術教育司之公開政策文件編成。各項說明忠於政策文件原文，未作延伸推論。日期以民國紀年為主、西元對照。整理日期：2026 年 7 月。</div>
   </header>
 
   <div class="legend">
+    <b>主責機關</b>
     <span><i class="dot d-ey"></i>行政院</span>
     <span><i class="dot d-nstc"></i>國家科學及技術委員會</span>
     <span><i class="dot d-moda"></i>數位發展部</span>
@@ -101,206 +119,216 @@ h1{font-family:"Noto Serif TC","Songti TC",serif;font-size:33px;line-height:1.3;
     <span><i class="dot d-civ"></i>民間（財團法人）</span>
   </div>
 
+  <!-- 前史 -->
   <div class="origin">
-    <div class="oh">國家 AI 起點（2017 起）</div>
-    <p class="on">在中小學教育政策成形之前，國家層級的 AI 推動與民間人才培育已先起步。此區為前史脈絡，非中小學教育政策本身。</p>
+    <div class="oh"><h2>國家 AI 起點</h2><span>2017 起　前史脈絡</span></div>
+    <p class="on">在中小學教育政策成形之前，國家層級的 AI 推動與民間人才培育已先起步。此區為背景脈絡，並非中小學教育政策本身。</p>
     <div class="tl">
       <div class="node n-nstc"><div class="card">
-        <div class="date"><span class="dt">2017-05-27</span><span class="agency">科技部（今國科會）</span></div>
+        <div class="chips"><span class="chip-date">2017-05-27</span><span class="chip-org">科技部（今國科會）</span></div>
         <h3>宣示「臺灣 AI 元年」，啟動臺灣人工智慧實驗室</h3>
-        <p>科技部舉行「臺灣人工智慧實驗室」（Taiwan AI Labs）啟動記者會，由部長陳良基、政務委員唐鳳與 PTT 創辦人杜奕瑾共同啟動，宣示「臺灣 AI 元年，從此刻開始」。</p>
-        <div class="src">來源：<a class="srclink" href="https://www.nstc.gov.tw/folksonomy/detail/3411bff1-e471-404d-ba28-7bcf02fd28aa?l=ch" target="_blank" rel="noopener">國家科學及技術委員會。新聞資料：「臺灣人工智慧實驗室」啟動，號召 AI 高手加入。</a></div>
+        <p>科技部舉行臺灣人工智慧實驗室（Taiwan AI Labs）啟動記者會，由部長陳良基、政務委員唐鳳與 PTT 創辦人杜奕瑾共同啟動，會中宣示「臺灣 AI 元年，從此刻開始」。陳良基當時表示，四月初訪美觀察到全球人工智慧發展速度超乎預期，幾乎所有科技公司都將 AI 視為核心領域，臺灣需與世界科技脈動同步、及早推動，並已規劃人工智慧專案研究與雲端研究環境。</p>
+        <div class="src">來源：<a href="https://www.nstc.gov.tw/folksonomy/detail/3411bff1-e471-404d-ba28-7bcf02fd28aa?l=ch" target="_blank" rel="noopener">國家科學及技術委員會。新聞資料：「臺灣人工智慧實驗室」啟動，號召 AI 高手加入</a></div>
       </div></div>
       <div class="node n-nstc"><div class="card">
-        <div class="date"><span class="dt">2017（2018-01 研究中心成立）</span><span class="agency">科技部（今國科會）</span></div>
+        <div class="chips"><span class="chip-date">2017（研究中心 2018-01 成立）</span><span class="chip-org">科技部（今國科會）</span></div>
         <h3>AI 推動策略「小國大戰略」與 AI 創新研究中心</h3>
-        <p>科技部以「小國大戰略」思維提出人工智慧推動策略，行政院於 2017 年 8 月 24 日院會通過我國 AI 科研策略；五大推動方向之一的 AI 創新研究中心，於 2018 年 1 月在臺灣大學、清華大學、交通大學與成功大學成立四座。</p>
-        <div class="src">來源：<a class="srclink" href="https://www.nstc.gov.tw/folksonomy/detail/87f2b25d-bbd9-4f1c-bad2-60ac28b93854?l=ch" target="_blank" rel="noopener">國家科學及技術委員會。新聞資料：深化改變，激勵合作，以小國大戰略思維透過 AI 將臺灣推向國際。</a></div>
+        <p>科技部以「小國大戰略」思維提出人工智慧推動策略，行政院並於 2017 年 8 月 24 日院會通過我國 AI 科研策略。策略之下規劃前瞻技術研發與雲端運算環境，其中的 AI 創新研究中心於 2018 年 1 月在臺灣大學、清華大學、交通大學與成功大學設立四座，吸引各界投入 AI 領域、培育人工智慧人才。</p>
+        <div class="src">來源：<a href="https://www.nstc.gov.tw/folksonomy/detail/87f2b25d-bbd9-4f1c-bad2-60ac28b93854?l=ch" target="_blank" rel="noopener">國家科學及技術委員會。新聞資料：深化改變，激勵合作，以小國大戰略思維透過 AI 將臺灣推向國際</a></div>
       </div></div>
       <div class="node n-civ"><div class="card">
-        <div class="date"><span class="dt">2018-01</span><span class="agency">民間（財團法人）</span></div>
+        <div class="chips"><span class="chip-date">2018-01</span><span class="chip-org">民間（財團法人）</span></div>
         <h3>台灣人工智慧學校 首期開課</h3>
-        <p>由財團法人科技生態發展公益基金會（科生會）主辦，中央研究院背景團隊（孔祥重、廖俊智等）與魏啟林籌備，多家企業捐贈。針對產業需求培育 AI 專才，開課後數月間於臺北、臺中、新竹培育逾 2,200 人。此為民間辦學，非政府機關政策。</p>
-        <div class="src">來源：<a class="srclink" href="https://aiacademy.tw/about/" target="_blank" rel="noopener">台灣人工智慧學校。關於我們／創校緣起。</a></div>
+        <p>台灣人工智慧學校開辦第一期課程，由財團法人科技生態發展公益基金會主辦，中央研究院背景的團隊與魏啟林參與籌備，並獲多家企業捐助。學校針對產業長期缺乏 AI 高階人才的問題，為在職者開設從 Python 與理論到機器學習、深度學習的課程，開辦數月間於臺北、臺中、新竹培育逾兩千兩百人。此為民間辦學，不屬政府機關政策。</p>
+        <div class="src">來源：<a href="https://aiacademy.tw/about/" target="_blank" rel="noopener">台灣人工智慧學校。關於我們</a></div>
       </div></div>
     </div>
   </div>
 
   <!-- 一、國家治理與戰略 -->
   <section class="phase">
-    <div class="phase-h">一、國家治理與戰略層<span class="who">主責：行政院 · 國科會 · 數位發展部</span></div>
+    <div class="phase-h"><div class="num">一</div><h2>國家治理與戰略層</h2></div>
+    <div class="phase-who">主責：行政院　·　國家科學及技術委員會　·　數位發展部</div>
     <p class="phase-note">國家層級先定願景與法源，再把原則轉為可操作的規範。這一層是中小學 AI 教育政策的上游架構。</p>
     <div class="tl">
       <div class="node n-ey"><div class="card">
-        <div class="date"><span class="dt">2018-2021 / 2023-2026</span><span class="agency">行政院</span></div>
+        <div class="chips"><span class="chip-date">2018-2021 首期　·　2023-2026 為 2.0</span><span class="chip-org">行政院</span></div>
         <h3>臺灣 AI 行動計畫（首期與 2.0）</h3>
-        <p>首期（2018-2021）以 AI 人才、領航推動、創新樞紐、場域法規開放與產業 AI 化五大主軸並進，設立四座 AI 創新研究中心。2.0 版於 112 年核定，重整為五項主軸，並首度把「回應人文社會議題」正式寫入，是兩期最明顯的差異。</p>
-        <div class="src">來源：<a class="srclink" href="https://digi.nstc.gov.tw/File/7C71629D702E2D89" target="_blank" rel="noopener">行政院智慧國家推動小組（2023）。臺灣 AI 行動計畫 2.0（2023-2026 年）（核定本）。</a></div>
+        <p>國家層級的布局起點。首期以 AI 人才衝刺、AI 領航推動、建構國際 AI 創新樞紐、場域與法規開放，以及產業 AI 化五大主軸並進，四年間設立四座 AI 創新研究中心、培育逾三萬名應用人才，並公布全球首部涵蓋陸海空的《無人載具科技創新實驗條例》。行政院於 112 年核定的 2.0 版重整為五項主軸，包含人才優化與擴增、技術深耕與產業發展、完善運作環境、提升國際影響力，以及回應人文社會議題，期望帶動 AI 軟硬體產值增加逾二千五百億元。與首期相比，2.0 版把回應人文社會議題正式寫進主軸，是兩期之間最明顯的差異。</p>
+        <div class="src">來源：<a href="https://digi.nstc.gov.tw/File/7C71629D702E2D89" target="_blank" rel="noopener">行政院智慧國家推動小組（2023）。臺灣 AI 行動計畫 2.0（2023-2026 年）（核定本）</a></div>
       </div></div>
       <div class="node n-ey"><div class="card">
-        <div class="date"><span class="dt">114-07（2025）</span><span class="agency">行政院</span></div>
+        <div class="chips"><span class="chip-date">114-07（2025）</span><span class="chip-org">行政院</span></div>
         <h3>五大信賴產業推動方案</h3>
-        <p>將半導體、人工智慧、軍工、安控與次世代通訊並列為國家核心戰略產業，AI 與國防、資安同屬國安層級部署；揭示「AI 之島」願景，四年培育 20 萬名數位人才。</p>
-        <div class="src">來源：<a class="srclink" href="https://www.ndc.gov.tw/" target="_blank" rel="noopener">行政院（2025）。五大信賴產業推動方案（核定本）。國家發展委員會。</a></div>
+        <p>行政院核定，把人工智慧與半導體、軍工、安控及次世代通訊並列為國家核心戰略產業，AI 因此與國防、資安、通訊韌性同置於攸關國家安全的位置。方案揭示「AI 之島」與「全球 AI 影響力中心」兩項願景，規劃擴充智慧節能資料中心等算力設施、吸引國際大廠來臺設研發據點，並透過國發基金結合的百億元專案投資與租稅誘因推動產業導入 AI。方案並訂出量化目標，期望數位經濟相關產業於 115 年突破新臺幣一兆元產值，製造業導入 AI 普及率提升至五成，四年內培育二十萬名數位人才。</p>
+        <div class="src">來源：<a href="https://www.ndc.gov.tw/" target="_blank" rel="noopener">行政院（2025）。五大信賴產業推動方案（核定本）。國家發展委員會</a></div>
       </div></div>
       <div class="node n-nstc"><div class="card">
-        <div class="date"><span class="dt">計畫進行中（版本演進至 115）</span><span class="agency">國科會</span></div>
+        <div class="chips"><span class="chip-date">計畫進行中（版本演進至 115）</span><span class="chip-org">國科會</span></div>
         <h3>TAIDE：可信任生成式 AI（數位主權模型）</h3>
-        <p>國科會主持、國家實驗研究院執行，以臺灣在地語料訓練繁體中文模型。版本自 Llama 2 起，114-02 換 Llama 3.1、114-08 改 Gemma、115-02 導入中期訓練、115-06 強化法規檢索。</p>
-        <div class="src">來源：<a class="srclink" href="https://taide.tw/" target="_blank" rel="noopener">財團法人國家實驗研究院（無日期）。TAIDE：推動臺灣可信任生成式 AI 發展計畫。</a></div>
+        <p>國科會主持、國家實驗研究院執行，以臺灣在地語料訓練能理解本土語境的繁體中文模型，避免公私部門大量使用外國模型可能帶來的資料外洩與文化脈絡落差。模型版本自 Llama 2 起，114 年 2 月釋出以 Llama 3.1 為基礎並推出 4-bit 量化版本以降低本地端部署門檻，114 年 8 月改以 Gemma 為基礎，115 年 2 月導入中期訓練技術把高品質本土語料融入參數、修正常見的翻譯腔與西方本位語法，6 月再釋出強化法規檢索應用的版本。</p>
+        <div class="src">來源：<a href="https://taide.tw/" target="_blank" rel="noopener">財團法人國家實驗研究院（無日期）。TAIDE：推動臺灣可信任生成式 AI 發展計畫</a></div>
       </div></div>
-      <div class="node n-nstc milestone"><div class="card">
-        <div class="date"><span class="dt">115-01-14（2026）</span><span class="agency">國科會</span></div>
+      <div class="node n-nstc key"><div class="card">
+        <div class="chips"><span class="chip-date">115-01-14（2026）</span><span class="chip-org">國科會</span></div>
         <h3>人工智慧基本法 公布施行</h3>
-        <p>全文二十條，框架式立法，先確立價值與跨部會協作的法理基礎。第 4 條揭示七項原則（永續發展與福祉、人類自主、隱私保護與資料治理、資安與安全、透明與可解釋、公平與不歧視、問責），成為後續教育 AI 指引的法源。</p>
-        <div class="src">來源：<a class="srclink" href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0160093" target="_blank" rel="noopener">全國法規資料庫（2026）。人工智慧基本法。</a></div>
+        <p>全文二十條，採框架式立法，先確立價值方向與跨部會協作的法理基礎，未寫入細部罰則，背後考量在於技術仍快速演變，過早把細節入法恐不合時宜。第 4 條揭示七項發展原則：永續發展與福祉、人類自主、隱私保護與資料治理、資安與安全、透明與可解釋、公平與不歧視，以及問責；第 5 條責成政府防範 AI 侵害人民生命、身體、自由與財產，並以兒少最佳利益為優先考量。立法附帶決議另要求跨部會於法案通過後一定期限內，完成涵蓋兒少、人權與性別的影響評估。</p>
+        <div class="src">來源：<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0160093" target="_blank" rel="noopener">全國法規資料庫（2026）。人工智慧基本法</a></div>
       </div></div>
       <div class="node n-moda"><div class="card">
-        <div class="date"><span class="dt">115（2026）</span><span class="agency">數位發展部</span></div>
+        <div class="chips"><span class="chip-date">115（2026）</span><span class="chip-org">數位發展部</span></div>
         <h3>AI 風險分類框架 v1.0</h3>
-        <p>依基本法第 16 條訂定。刻意採「分類」而非歐盟式「分級」，把風險歸為三大類（技術設計缺陷、部署與人機互動、社會結構與環境衝擊），各主管機關依「盤點、識別、評估、應對」四步驟辦理。</p>
-        <div class="src">來源：<a class="srclink" href="https://moda.gov.tw/major-policies/ai/governance/19244" target="_blank" rel="noopener">數位發展部（2026）。人工智慧風險分類框架（v1.0）。</a></div>
+        <p>依基本法第 16 條訂定。這套框架刻意有別於歐盟《人工智慧法案》的分級思維，改採分類，因為同一項技術用在不同場景所產生的風險未必相同。框架把風險歸為三大類：AI 系統本身的技術設計缺陷、部署後的操作與人機互動問題，以及社會結構與環境衝擊。各主管機關依「盤點、識別、評估、應對」四步驟辦理，若可能對國家安全、人民基本權利、生命財產、社會秩序或生態環境造成嚴重危害，即認定為高風險 AI 應用，再依比例原則採取相應管理措施。適用範圍以民用領域為主，並明確排除軍事用途。</p>
+        <div class="src">來源：<a href="https://moda.gov.tw/major-policies/ai/governance/19244" target="_blank" rel="noopener">數位發展部（2026）。人工智慧風險分類框架（v1.0）</a></div>
       </div></div>
       <div class="node n-moda"><div class="card">
-        <div class="date"><span class="dt">115-05-19，3.0 版（2026）</span><span class="agency">數位發展部</span></div>
+        <div class="chips"><span class="chip-date">115-05，3.0 版（2026）</span><span class="chip-org">數位發展部</span></div>
         <h3>AI 產業人才認定指引（3.0 版）</h3>
-        <p>由數位發展部數位產業署發布，提出 AI 產業人才類別與能力架構，協助企業辨識人才、作為民間認證與課程規劃的參考。3.0 版新增兩項能力：「AI 治理素養」（因應 115 年 1 月《人工智慧基本法》，協助人才認識 AI 應用的風險框架）與「AI 協作與開發」（回應 Vibe Coding 與 Agentic AI 的開發趨勢）。</p>
-        <div class="src">來源：<a class="srclink" href="https://moda.gov.tw/ADI/services/publications/19692" target="_blank" rel="noopener">數位發展部數位產業署（2026）。AI 產業人才認定指引（115 年 5 月，3.0 版）。</a> · <a class="srclink" href="https://moda.gov.tw/ADI/news/latest-news/19724" target="_blank" rel="noopener">新聞發布。</a></div>
+        <p>由數位發展部數位產業署發布，提出 AI 產業人才類別與能力架構，協助企業辨識人才、提升媒合效率，並作為民間發展認證與課程規劃的參考。3.0 版新增兩項能力：AI 治理素養，回應《人工智慧基本法》施行後對風險與治理的認識需求；AI 協作與開發，回應 Vibe Coding 與 Agentic AI 的開發趨勢。指引並說明會因應技術迭代與產業需求動態更新。</p>
+        <div class="src">來源：<a href="https://moda.gov.tw/ADI/services/publications/19692" target="_blank" rel="noopener">數位發展部數位產業署（2026）。AI 產業人才認定指引（115 年 5 月，3.0 版）</a></div>
       </div></div>
-      <div class="node n-ey milestone"><div class="card">
-        <div class="date"><span class="dt">115-05-21（2026）</span><span class="agency">行政院</span></div>
-        <h3>國家 AI 戰略特別委員會 ＋ 國家 AI 發展綱領</h3>
-        <p>行政院院會宣布，由院長親自召集委員會，全面協調全國 AI 事務，並研擬我國首份國家 AI 發展綱領，以院級層級統籌原本分散於各部會的業務。</p>
-        <div class="src">來源：<a class="srclink" href="https://www.ey.gov.tw/Page/9277F759E41CCD91/999df6da-6539-4941-913f-5125d684c58d" target="_blank" rel="noopener">行政院（2026）。落實「人工智慧基本法」，卓揆宣布成立「國家人工智慧戰略特別委員會」並研擬首部「國家人工智慧發展綱領」。</a></div>
+      <div class="node n-ey key"><div class="card">
+        <div class="chips"><span class="chip-date">115-05-21（2026）</span><span class="chip-org">行政院</span></div>
+        <h3>國家 AI 戰略特別委員會　與　國家 AI 發展綱領</h3>
+        <p>基本法確立原則後，由於 AI 事務橫跨國防、政治、經濟與教育等領域、原本分散於各部會而未必步調一致，行政院於院會宣布成立國家人工智慧戰略特別委員會，由院長親自召集、全面協調並推動全國 AI 事務，並研擬我國首份國家人工智慧發展綱領。各級政府單位須依基本法第 19 條進行公務使用 AI 的風險評估、第 18 條於施行後兩年內完成相關法規與行政措施的調適，結果再彙整提報委員會併入綱領。</p>
+        <div class="src">來源：<a href="https://www.ey.gov.tw/Page/9277F759E41CCD91/999df6da-6539-4941-913f-5125d684c58d" target="_blank" rel="noopener">行政院（2026）。落實「人工智慧基本法」，卓揆宣布成立「國家人工智慧戰略特別委員會」並研擬首部「國家人工智慧發展綱領」</a></div>
       </div></div>
     </div>
   </section>
 
-  <!-- 二、中小學數位學習與 AI 素養（資科司） -->
+  <!-- 二、資科司 -->
   <section class="phase">
-    <div class="phase-h">二、中小學數位學習與 AI 素養<span class="who">主責：教育部資訊及科技教育司</span></div>
+    <div class="phase-h"><div class="num">二</div><h2>中小學數位學習與 AI 素養</h2></div>
+    <div class="phase-who">主責：教育部資訊及科技教育司</div>
     <p class="phase-note">教育部這一條線，從補足硬體的數位學習精進方案，走到指引體系、AI 素養框架與 AI 人才方舟計畫，資源重心由硬體移向師生素養。</p>
     <div class="tl">
       <div class="node n-k12"><div class="card">
-        <div class="date"><span class="dt">110 底核定，111-114（2021-2025）</span><span class="agency">教育部資科司</span></div>
+        <div class="chips"><span class="chip-date">110 底核定，111-114（2021-2025）</span><span class="chip-org">教育部資科司</span></div>
         <h3>推動中小學數位學習精進方案</h3>
-        <p>因應疫情遠距教學暴露的城鄉載具落差，行政院於 110 年底核定，四年 200 億元。三子計畫：行動載具與校園網路提升（補助逾 60 萬臺、偏遠一人一機）、數位內容充實、教育大數據建置。目標「生生用平板」。</p>
-        <div class="src">來源：<a class="srclink" href="https://pads.moe.edu.tw/download.php" target="_blank" rel="noopener">教育部（2025）。推動中小學數位學習精進方案簡介。</a></div>
+        <p>這一線的起點是硬體。2021 年疫情期間全面遠距教學，暴露了城鄉與家庭之間在載具與網路的落差，行政院於該年底核定為期四年、總經費 200 億元的精進方案。方案下設三項子計畫，規模最大的是行動載具與校園網路提升，中央補助採購逾六十萬臺學習載具，偏遠地區採一人一機、非偏遠地區依每六班配發一班為原則；其餘為數位內容充實與教育大數據建置。依審計部決算審核報告，方案預算執行率逾九成、補助國中小購置逾四十萬臺載具，但截至 114 年 2 月全國仍有四百餘所學校未達成每人一臺，且多位於偏遠或非山非市地區。</p>
+        <div class="src">來源：<a href="https://pads.moe.edu.tw/download.php" target="_blank" rel="noopener">教育部（2025）。推動中小學數位學習精進方案簡介</a>　·　<a href="https://auditreport.audit.gov.tw/" target="_blank" rel="noopener">審計部（2025）。113 年度中央政府總決算審核報告</a></div>
       </div></div>
-      <div class="node n-k12 milestone"><div class="card">
-        <div class="date"><span class="dt">111-09 / 112-10 / 114-01</span><span class="agency">教育部資科司</span></div>
-        <h3>中小學數位教學指引 1.0 → 2.0 → 3.0（AI 地位三級跳）</h3>
-        <p>教師指引的三版，最能看出生成式 AI 如何進入教學文本。1.0（111-09）目錄無 AI 章節、全文「生成式」0 次（早於 ChatGPT）；2.0（112-10）新增「附錄一：生成式 AI 輔助教學說明」、詞頻升至 128；3.0（114-01）升為主章節「應用生成式 AI 輔助教學之說明」下轄 8 節、詞頻 284。</p>
-        <div class="src">來源：<a class="srclink" href="https://pads.moe.edu.tw/download_file.php?file=_upload_93374ae0e8c98dd223a80ab55fd6a6fe.pdf&old=upload" target="_blank" rel="noopener">教育部（2025）。中小學數位教學指引 3.0 版。</a></div>
-      </div></div>
-      <div class="node n-k12"><div class="card">
-        <div class="date"><span class="dt">114-01（2025）</span><span class="agency">教育部資科司</span></div>
-        <h3>校長數位學習領導指引 ＋ 家長數位學習知能指引</h3>
-        <p>與教學指引 3.0 同批發布，構成「教師、校長、家長」三本一組。校長指引提五大實施策略與「面對 AI 的思維」專章；家長指引首次發布，以陪伴為基礎，含「安全使用生成式 AI」專節。</p>
-        <div class="src">來源：<a class="srclink" href="https://pads.moe.edu.tw/download_file.php?file=_upload_d77fa357eb485b5a9deb9494374fe4f9.pdf&old=upload" target="_blank" rel="noopener">教育部（2025）。中小學校長數位學習領導指引。</a> · <a class="srclink" href="https://pads.moe.edu.tw/download_file.php?file=_upload_1876e6074de824d775cbd2fc7253e050.pdf&old=upload" target="_blank" rel="noopener">中小學家長數位學習知能指引。</a></div>
+      <div class="node n-k12 key"><div class="card">
+        <div class="chips"><span class="chip-date">111-09　/　112-10　/　114-01</span><span class="chip-org">教育部資科司</span></div>
+        <h3>中小學數位教學指引 1.0 → 2.0 → 3.0</h3>
+        <p>教師端的數位教學指引，其版本演進最能看出生成式 AI 進入教學文本的過程。1.0 版（111 年 9 月）的目錄由三個重要概念、教師數位教學實務五項與支持系統構成，全文沒有 AI 章節、「生成式」一詞出現零次，這一版早於 ChatGPT。2.0 版（112 年 10 月）主結構不變，但新增「附錄一：數位教學應用生成式 AI 輔助教學說明」，「生成式」一詞增至一百二十八次。3.0 版（114 年 1 月）把這部分從附錄升格為正式主章節「應用生成式 AI 輔助教學之說明」，下轄八節，從認識生成式 AI、應用人工智慧的學科教學知識，到師生使用時機、注意事項與「面對 AI 的思維」，「生成式」出現次數達兩百八十四次、篇幅擴至一百一十六頁。</p>
+        <div class="src">來源：<a href="https://pads.moe.edu.tw/download_file.php?file=_upload_93374ae0e8c98dd223a80ab55fd6a6fe.pdf&old=upload" target="_blank" rel="noopener">教育部（2025）。中小學數位教學指引 3.0 版</a></div>
       </div></div>
       <div class="node n-k12"><div class="card">
-        <div class="date"><span class="dt">113-07 初訂 → 115-02 修至 2.1</span><span class="agency">教育部資科司</span></div>
-        <h3>中小學使用生成式人工智慧注意事項（2.1 版）</h3>
-        <p>教師須為採用的 AI 生成內容負責；學生使用須標示工具名稱、版本與日期並附對話歷程；提示詞避免洩漏機密與個資。初訂於 113-07-01，經 114-12 修正，現行為 115-02-11 的 2.1 版。</p>
-        <div class="src">來源：<a class="srclink" href="https://pads.moe.edu.tw/download_file.php?file=_upload_bb53904162cc806cc9a7523a8f73d86f.pdf&old=upload" target="_blank" rel="noopener">教育部（2026）。中小學使用「生成式人工智慧」注意事項 2.1（教師、行政人員及家長版）。</a></div>
+        <div class="chips"><span class="chip-date">114-01（2025）</span><span class="chip-org">教育部資科司</span></div>
+        <h3>校長數位學習領導指引　與　家長數位學習知能指引</h3>
+        <p>資科司於同月一次發布三本一組的指引，分別對應教師、校長與家長。除了教學指引 3.0，還有中小學校長數位學習領導指引，提出擘劃願景、建置環境、組織社群、家長陪伴與個人化評估回饋五大實施策略，並設「面對 AI 的思維」專章；以及首次發布的中小學家長數位學習知能指引，以陪伴為基礎，設有「安全使用生成式 AI」專節。三者共同構成從學校到家庭的支持系統。</p>
+        <div class="src">來源：<a href="https://pads.moe.edu.tw/download_file.php?file=_upload_d77fa357eb485b5a9deb9494374fe4f9.pdf&old=upload" target="_blank" rel="noopener">教育部（2025）。中小學校長數位學習領導指引</a>　·　<a href="https://pads.moe.edu.tw/download_file.php?file=_upload_1876e6074de824d775cbd2fc7253e050.pdf&old=upload" target="_blank" rel="noopener">中小學家長數位學習知能指引</a></div>
       </div></div>
       <div class="node n-k12"><div class="card">
-        <div class="date"><span class="dt">導入中（因材網整合）</span><span class="agency">教育部資科司</span></div>
+        <div class="chips"><span class="chip-date">112-10 至 113-07</span><span class="chip-org">教育部資科司</span></div>
+        <h3>生成式 AI 協助數位學習實驗方案（教師申請）</h3>
+        <p>在生成式 AI 學習夥伴全面開放之前，資科司先推動這項實驗方案，開放全國三至十二年級中小學教師申請。方案依精進方案與十二年國教核心素養的「自主行動」「溝通互動」而訂，讓師生在因材網上試用通用型與學科領域兩種學習夥伴。參與教師須完成含生成式 AI 輔助教學設計的培訓，每學期至少進行一次因材網「單元診斷」前後測並提供成績資料，教學使用回饋再回頭修正學習夥伴。審查採書面方式，評分權重以「參與教育部數位學習相關計畫」占六成最高。</p>
+        <div class="src">來源：<a href="https://pads.moe.edu.tw/download.php" target="_blank" rel="noopener">教育部（2023）。生成式 AI 協助數位學習實驗方案徵件須知（核定版）</a></div>
+      </div></div>
+      <div class="node n-k12"><div class="card">
+        <div class="chips"><span class="chip-date">導入中（因材網整合）</span><span class="chip-org">教育部資科司</span></div>
         <h3>生成式 AI 學習夥伴「e 度」</h3>
-        <p>官方數位學習平臺因材網整合生成式 AI。學生求助時不直接給答案，而以蘇格拉底式提問反向追問、引導解題。113 年實證顯示，結合 e 度的學習在後測表現顯著優於單純影片或教科書自學。</p>
-        <div class="src">來源：<a class="srclink" href="https://adl.edu.tw/" target="_blank" rel="noopener">教育部（無日期）。因材網（適性教學輔助平臺）。</a></div>
+        <p>實驗方案累積的回饋，接續到官方平臺因材網整合的生成式 AI 學習夥伴「e 度」。e 度分通用型與學科領域兩種：通用型常駐系統頁面，結合自主學習、探究式學習與合作學習，以蘇格拉底式提問引導個人化學習；學科領域型則結合知識結構與節點內容，可搭配測驗診斷報告，針對錯誤節點或先備知識互動學習。113 年的實證研究顯示，結合 e 度的學習在後測表現上，顯著優於單純的影片或教科書自學。</p>
+        <div class="src">來源：<a href="https://adl.edu.tw/" target="_blank" rel="noopener">教育部（無日期）。因材網（適性教學輔助平臺）</a></div>
       </div></div>
-      <div class="node n-k12 milestone"><div class="card">
-        <div class="date"><span class="dt">115-04 核定（2026）</span><span class="agency">教育部資科司</span></div>
+      <div class="node n-k12"><div class="card">
+        <div class="chips"><span class="chip-date">113-07 初訂 → 115-02 修至 2.1</span><span class="chip-org">教育部資科司</span></div>
+        <h3>中小學使用生成式人工智慧注意事項（2.1 版）</h3>
+        <p>規範面，教育部訂定中小學使用生成式 AI 注意事項，分教師、行政人員及家長版與學生版。內容提醒教師須為採用的 AI 生成內容負責，因模型仍可能出現幻覺與偏見；學生使用時須標示工具的名稱、版本與日期，並建議附上對話歷程作為佐證，輸入提示詞也要避免洩漏機密與個資。注意事項初訂於 113 年 7 月，經 114 年 12 月與 115 年 2 月兩度修正，現行為 2.1 版。</p>
+        <div class="src">來源：<a href="https://pads.moe.edu.tw/download_file.php?file=_upload_bb53904162cc806cc9a7523a8f73d86f.pdf&old=upload" target="_blank" rel="noopener">教育部（2026）。中小學使用「生成式人工智慧」注意事項 2.1（教師、行政人員及家長版）</a></div>
+      </div></div>
+      <div class="node n-k12 key"><div class="card">
+        <div class="chips"><span class="chip-date">115-04 核定（2026）</span><span class="chip-org">教育部資科司</span></div>
         <h3>臺灣中小學教師與學生 AI 素養框架</h3>
-        <p>接軌 UNESCO 2024 與 OECD／歐盟 2025 框架（後者為 PISA 2029 依據）。核心為「以人為中心」的雙重能動性：人類能動性（保有決策主導權）與知識能動性（辨識 AI 真偽）。收斂為四面向、三層級（取得理解、深化應用、創造轉型），不要求人人達最高階；明確警示認知卸載與虛假精熟。</p>
-        <div class="src">來源：<a class="srclink" href="https://pads.moe.edu.tw/download_file.php?file=_upload_4e783e955bd0986f4e100534b08a84d2.pdf&old=upload" target="_blank" rel="noopener">教育部（2026）。臺灣中小學教師與學生 AI 素養框架。</a></div>
+        <p>這一線的核心。框架接軌 UNESCO 2024 年的師生 AI 素養框架，以及 OECD 與歐盟執委會 2025 年的「AI 時代賦能學習者」草案，後者也將作為 PISA 2029 媒體與 AI 素養測驗的依據。其核心是以人為中心的雙重能動性：人類能動性，在與 AI 協作時保有決策的主導權；知識能動性，能辨識 AI 產出的真偽，不讓演算法取代價值判斷。框架把國際指標收斂為四個面向，每個面向再分取得理解、深化應用與創造轉型三個層級，並不要求每位師生在每個面向都達到最高階。框架也承認，若缺乏妥善的教學設計，學生容易出現認知卸載與虛假精熟，任務完成了、學習卻沒有內化，因此主張在人機協作中仍由人類監督、保留必要的思考環節。</p>
+        <div class="src">來源：<a href="https://pads.moe.edu.tw/download_file.php?file=_upload_4e783e955bd0986f4e100534b08a84d2.pdf&old=upload" target="_blank" rel="noopener">教育部（2026）。臺灣中小學教師與學生 AI 素養框架</a></div>
       </div></div>
       <div class="node n-k12"><div class="card">
-        <div class="date"><span class="dt">115-06（2026）</span><span class="agency">教育部資科司</span></div>
+        <div class="chips"><span class="chip-date">115-06（2026）</span><span class="chip-org">教育部資科司</span></div>
         <h3>高級中等以下學校人工智慧使用和學習指引</h3>
-        <p>摘要彙整前述各份指引與手冊，依《AI 基本法》第 4 條七項原則，分就校長、教師、學生、家長四種角色，提出使用與學習的基本原則（四角色乘七原則）。</p>
-        <div class="src">來源：<a class="srclink" href="https://pads.moe.edu.tw/download_file.php?file=_upload_e95ebf079184cfec530145b1f5985407.pdf&old=upload" target="_blank" rel="noopener">教育部（2026）。高級中等以下學校人工智慧使用和學習指引。</a></div>
+        <p>教育部發布，摘要彙整前述各份指引與手冊的重點，並依《人工智慧基本法》第 4 條的七項原則，分就校長、教師、學生與家長四種角色，提出使用與學習的基本原則，形成四種角色乘以七項原則的條文結構，讓不同身分各自對應可依循的規範。</p>
+        <div class="src">來源：<a href="https://pads.moe.edu.tw/download_file.php?file=_upload_e95ebf079184cfec530145b1f5985407.pdf&old=upload" target="_blank" rel="noopener">教育部（2026）。高級中等以下學校人工智慧使用和學習指引</a></div>
       </div></div>
       <div class="node n-k12"><div class="card">
-        <div class="date"><span class="dt">115.04 版</span><span class="agency">教育部資科司</span></div>
+        <div class="chips"><span class="chip-date">115.04 版</span><span class="chip-org">教育部資科司</span></div>
         <h3>教師數位教學增能培訓架構（A 至 F 分層）</h3>
-        <p>資科司建立的分層教師增能體系，由基礎、進階到講師培訓三層。基礎課程 A1 至 A3（數位學習概論與平臺、數位素養）與 B3、B5-1；進階課程 B1 科技輔助自主學習、B2 PBL、B4 科目議題、B5-2 生成式 AI 融入學科；講師培訓 C（因材網講師）、D（科技輔助自主學習講師）、E（數位素養講師）與 F1、F2（生成式 AI 講師），以種子講師擴散能量。官方 115.04 版架構為 A 至 F 六類，未設 Z 類。</p>
-        <div class="src">來源：<a class="srclink" href="https://pads.moe.edu.tw/download_file.php?file=_upload_b67a86907d85354ecb3196184b06db98.pdf&old=upload" target="_blank" rel="noopener">教育部（2026）。教師數位教學增能培訓架構（115.04 版）。</a></div>
+        <p>在教師端，資科司建立分層的數位教學增能培訓架構，由基礎、進階到講師培訓三層。基礎課程包含 A1 至 A3 的數位學習概論、平臺應用與數位素養，以及 B3 數位教學指引培力與 B5-1 生成式 AI 與教育應用工作坊；進階課程有 B1 科技輔助自主學習、B2 專題導向學習、B4 科目議題數位教學與 B5-2 生成式 AI 融入學科教學；講師培訓則有 C 因材網講師、D 科技輔助自主學習講師、E 數位素養講師，以及 F1、F2 兩類生成式 AI 講師，透過種子講師把能量擴散到教學現場。</p>
+        <div class="src">來源：<a href="https://pads.moe.edu.tw/download_file.php?file=_upload_b67a86907d85354ecb3196184b06db98.pdf&old=upload" target="_blank" rel="noopener">教育部（2026）。教師數位教學增能培訓架構（115.04 版）</a></div>
       </div></div>
-      <div class="node n-k12 milestone"><div class="card">
-        <div class="date"><span class="dt">115 啟動，115-118（2026-2029）</span><span class="agency">教育部資科司</span></div>
+      <div class="node n-k12 key"><div class="card">
+        <div class="chips"><span class="chip-date">115 啟動，115-118（2026-2029）</span><span class="chip-org">教育部資科司</span></div>
         <h3>AI 人才方舟計畫</h3>
-        <p>承接素養框架，四年、總經費 117.55 億元，主辦教育部。分三大面向（建構 AI 學習環境、培育 AI 跨域教學人才、強化數據決策能力）與六項子計畫；經費比重最高者為數位教學支持與輔導。學生能力圖像四項，末項「AI 無法取代的能力」拉回同理、思辨、想像與協作。</p>
-        <div class="src">來源：<a class="srclink" href="https://www.ey.gov.tw/Page/448DE008087A1971/69349d8a-b2be-406c-a997-8bf919259f85" target="_blank" rel="noopener">教育部（2026）。打造 AI 智慧教育新生態：AI 人才方舟計畫。行政院。</a></div>
+        <p>承接素養框架，教育部啟動 AI 人才方舟計畫，推動期程 115 至 118 年、為期四年、總經費 117.55 億元。計畫分三大面向，建構 AI 學習環境、培育 AI 跨域教學人才與強化數據決策能力，透過六項子計畫落實，其中經費比重最高者為數位教學支持與輔導。計畫目標指向師生兩端的 AI 素養，並由此延伸出四項學生能力圖像：運用 AI 學習、負責任使用 AI、運用 AI 解決問題，以及 AI 無法取代的能力，最後一項把關懷拉回同理、思辨、想像與協作這些演算法難以替代的人類特質。</p>
+        <div class="src">來源：<a href="https://www.ey.gov.tw/Page/448DE008087A1971/69349d8a-b2be-406c-a997-8bf919259f85" target="_blank" rel="noopener">教育部（2026）。打造 AI 智慧教育新生態：AI 人才方舟計畫。行政院</a></div>
       </div></div>
       <div class="node n-k12"><div class="card">
-        <div class="date"><span class="dt">115 年度（2026）</span><span class="agency">教育部資科司</span></div>
+        <div class="chips"><span class="chip-date">115 年度（2026）</span><span class="chip-org">教育部資科司</span></div>
         <h3>115 年度中小學數位學習實施計畫</h3>
-        <p>計畫實施重點納入「數位及人工智慧（AI）學習」，並新增「AI 導入數位教學示範學校」（每校至少 3 位教師、每學期以補助 20 萬元為原則）；硬體補助由全額調整為部分補助，學習載具、行動載具管理系統與無線網路基地臺不再列入補助。</p>
-        <div class="src">來源：<a class="srclink" href="https://pads.moe.edu.tw/download.php" target="_blank" rel="noopener">教育部（2026）。中小學數位學習與 AI 人才方舟計畫資料下載。</a></div>
+        <p>計畫實施重點納入「數位及人工智慧（AI）學習」，並新增「AI 導入數位教學示範學校」，每校至少三位教師參與、每學期以補助二十萬元為原則。硬體補助則由全額調整為部分補助，學習載具、行動載具管理系統與無線網路基地臺不再列入補助。</p>
+        <div class="src">來源：<a href="https://pads.moe.edu.tw/download.php" target="_blank" rel="noopener">教育部（2026）。115 年度中小學數位學習實施計畫說明</a></div>
       </div></div>
     </div>
 
     <div class="family">
-      <h3>◎ 落到課堂：學生分齡手冊與教師示範教案（教育部資科司）</h3>
-      <p style="margin:0 0 6px;font-size:14px;color:var(--muted)">框架與指引之外，資科司把 AI 素養轉成學生手冊與教師教案。這些多未收進最初的連結地圖，經實際點入下載頁取得。</p>
+      <h3>◎ 落到課堂：學生分齡手冊與教師示範教案</h3>
       <ul>
-        <li><b>學生分齡學習應用手冊</b>（2025-12，全圖像式繪本）：<a href="https://pads.moe.edu.tw/download_file.php?file=_upload_ed393475d20a594d0eec2de24d102c93.pdf&old=upload" target="_blank" rel="noopener">國小三至六年級《我和 AI 一起學！》</a>（74 頁，6 章）與<a href="https://pads.moe.edu.tw/download_file.php?file=_upload_18c8d36c0691aaabdad6f1d67cb9d18a.pdf&old=upload" target="_blank" rel="noopener">國高中《駕馭 AI，洞察未來：數位公民的必修課》</a>（48 頁，前言＋6 章）；含挑戰任務、批判思考題與逐步提示詞示範。</li>
-        <li><b>教師具名示範教案 35 份</b>（<a href="https://pads.moe.edu.tw/download.php" target="_blank" rel="noopener">download.php「教案示例」</a>，依學制）：國小 18、國中 6、普高 5、技高 6；跨數學、自然、國語文、社會、藝術、英語、商業與運算思維，多以「AI 導入」命名。</li>
+        <li><b>學生分齡學習應用手冊</b>（2025 年 12 月，繪本形式）：<a href="https://pads.moe.edu.tw/download_file.php?file=_upload_ed393475d20a594d0eec2de24d102c93.pdf&old=upload" target="_blank" rel="noopener">國小三至六年級《我和 AI 一起學！》</a>（六章，從「AI 是什麼」到「AI 時代的好公民」）與<a href="https://pads.moe.edu.tw/download_file.php?file=_upload_18c8d36c0691aaabdad6f1d67cb9d18a.pdf&old=upload" target="_blank" rel="noopener">國高中《駕馭 AI，洞察未來：數位公民的必修課》</a>（前言與六章）；兩本皆含挑戰任務、批判思考題與逐步的提示詞示範。</li>
+        <li><b>教師具名示範教案 35 份</b>（<a href="https://pads.moe.edu.tw/download.php" target="_blank" rel="noopener">下載頁「教案示例」，依學制分類</a>）：國小 18、國中 6、普通高中 5、技術型高中 6，橫跨數學、自然、國語文、社會、藝術、英語、商業與運算思維，其中不少直接以「AI 導入」命名。</li>
       </ul>
     </div>
   </section>
 
-  <!-- 三、師資培育與職前教育（師藝司） -->
+  <!-- 三、師藝司 -->
   <section class="phase">
-    <div class="phase-h">三、師資培育與職前教育<span class="who">主責：教育部師資培育及藝術教育司</span></div>
-    <p class="phase-note">硬體與素養之外，AI 也進入教師的養成端。師藝司這一線把 AI 教學能力從在職增能延伸到職前師培的共同基準。</p>
+    <div class="phase-h"><div class="num">三</div><h2>師資培育與職前教育</h2></div>
+    <div class="phase-who">主責：教育部師資培育及藝術教育司</div>
+    <p class="phase-note">硬體與素養之外，AI 也進入教師的養成端。這一線把 AI 教學能力從在職增能延伸到職前師培的共同基準。</p>
     <div class="tl">
       <div class="node n-teach"><div class="card">
-        <div class="date"><span class="dt">2023 起</span><span class="agency">教育部師藝司</span></div>
+        <div class="chips"><span class="chip-date">2023 起</span><span class="chip-org">教育部師藝司</span></div>
         <h3>AIPACK：生成式 AI 融入學科教學知能提升</h3>
-        <p>推動教師把生成式 AI 融入學科知識與教學法（AI Pedagogical And Content Knowledge），研發國語、英語、數學、自然、藝術、特教等領域的 AI 導入範例課程，與各層級教師增能課程結合。</p>
-        <div class="src">來源：<a class="srclink" href="https://www.edu.tw/News_Content.aspx?n=9E7AC85F1954DDA8&sms=169B8E91BB75571F&s=B16F5E560EE8BC93" target="_blank" rel="noopener">教育部（2026）。推動未來教師 AI 賦能，建立智慧教育師培新模式。</a></div>
+        <p>在職端，教育部自 2023 年起推動 AIPACK，把生成式 AI 融入學科知識與教學法，研發國語、英語、數學、自然、藝術與特殊教育等領域的 AI 導入範例課程，並與各層級的教師增能課程結合，讓教師在自己的學科脈絡中學會運用 AI。</p>
+        <div class="src">來源：<a href="https://www.edu.tw/News_Content.aspx?n=9E7AC85F1954DDA8&sms=169B8E91BB75571F&s=B16F5E560EE8BC93" target="_blank" rel="noopener">教育部（2026）。推動未來教師 AI 賦能，建立智慧教育師培新模式</a></div>
       </div></div>
       <div class="node n-k12"><div class="card">
-        <div class="date"><span class="dt">前導計畫（2024 起）</span><span class="agency">教育部資科司</span><span class="agency" style="background:var(--teach)">師藝司</span></div>
+        <div class="chips"><span class="chip-date">前導計畫（2024 起）</span><span class="chip-org">教育部資科司</span><span class="chip-org alt">師藝司</span></div>
         <h3>智慧教育師資培育聯盟</h3>
-        <p>由資訊及科技教育司主責、師資培育及藝術教育司共同推動，結合師資培育大學把 AI 導入師資培育課程，讓師資生在正式任教前就接觸 AI 教學、強化臨床教學與教育 AI 研究。</p>
-        <div class="src">來源：<a class="srclink" href="https://www.edu.tw/News_Content.aspx?n=9E7AC85F1954DDA8&sms=169B8E91BB75571F&s=B16F5E560EE8BC93" target="_blank" rel="noopener">教育部（2026）。智慧教育師資培育聯盟前導計畫成果分享。</a></div>
+        <p>職前端，由資訊及科技教育司主責、師資培育及藝術教育司共同推動，結合師資培育大學成立智慧教育師資培育聯盟，把 AI 導入師資培育課程，讓師資生在正式任教前就接觸 AI 教學，並強化臨床教學與教育 AI 研究。</p>
+        <div class="src">來源：<a href="https://www.edu.tw/News_Content.aspx?n=9E7AC85F1954DDA8&sms=169B8E91BB75571F&s=B16F5E560EE8BC93" target="_blank" rel="noopener">教育部（2026）。智慧教育師資培育聯盟前導計畫成果分享</a></div>
       </div></div>
-      <div class="node n-teach milestone"><div class="card">
-        <div class="date"><span class="dt">115-06 修正（2026）</span><span class="agency">教育部師藝司</span></div>
+      <div class="node n-teach key"><div class="card">
+        <div class="chips"><span class="chip-date">115-06 修正（2026）</span><span class="chip-org">教育部師藝司</span></div>
         <h3>師資職前教育課程基準：AI 列為共同核心</h3>
-        <p>把「人工智慧與科技在教育上的應用」正式列為各師資類科的課程核心，放在「規劃適切的課程、教學及多元評量」素養之下，橫跨中等、國小、幼兒與特殊教育。對照 112-10 與 114-03 版，AI 原本只出現在資訊科技類科的學科內容；擴為各類科共通的教學應用，是 115 年這次修正才確立。</p>
-        <div class="src">來源：<a class="srclink" href="https://edu.law.moe.gov.tw/LawContent.aspx?id=GL002340" target="_blank" rel="noopener">教育部（2026）。中華民國教師專業素養指引：師資職前教育階段暨師資職前教育課程基準修正規定。</a></div>
+        <p>制度面最關鍵的一步。這次修正把「人工智慧與科技在教育上的應用」正式列為各師資類科的課程核心，放在規劃課程、教學與多元評量的專業素養之下，橫跨中等、國小、幼兒與特殊教育，部分類科更明確寫出人工智慧與自主學習、人工智慧教學素養等對應科目。對照 112 年 10 月與 114 年 3 月的版本，人工智慧原本只出現在資訊科技類科的專門課程、與機器學習及資料探勘並列；擴為各師資類科共通的教學應用，是 115 年這次修正才確立。</p>
+        <div class="src">來源：<a href="https://edu.law.moe.gov.tw/LawContent.aspx?id=GL002340" target="_blank" rel="noopener">教育部（2026）。中華民國教師專業素養指引：師資職前教育階段暨師資職前教育課程基準修正規定</a></div>
       </div></div>
     </div>
   </section>
 
-  <!-- 四、高等教育與偏鄉銜接 -->
+  <!-- 四、高教與偏鄉 -->
   <section class="phase">
-    <div class="phase-h">四、高等教育與偏鄉銜接<span class="who">主責：教育部</span></div>
+    <div class="phase-h"><div class="num">四</div><h2>高等教育與偏鄉銜接</h2></div>
+    <div class="phase-who">主責：教育部</div>
     <p class="phase-note">政策也向上接高教、向下接偏鄉，讓 AI 學習資源在不同學制與地區之間流動。</p>
     <div class="tl">
       <div class="node n-k12"><div class="card">
-        <div class="date"><span class="dt">113 學年度成立</span><span class="agency">教育部</span></div>
+        <div class="chips"><span class="chip-date">113 學年度成立</span><span class="chip-org">教育部</span></div>
         <h3>臺灣大專院校人工智慧學程聯盟（TAICA）</h3>
-        <p>跨校資源共享，開設探索應用、工業應用、自然語言技術與視覺技術四大類學分學程，由師資充裕的頂尖大學開授主導課程，支援師資相對不足的校院，並開啟「AI＋X」跨域整合。</p>
-        <div class="src">來源：<a class="srclink" href="https://taicatw.net/" target="_blank" rel="noopener">臺灣大專院校人工智慧學程聯盟（無日期）。TAICA。</a></div>
+        <p>教育部透過跨校資源共享，開設探索應用、工業應用、自然語言技術與視覺技術四大類學分學程，由師資充裕的頂尖大學開授主導課程、支援師資相對不足的校院。課程採線上同步與非同步並行，並在人文社會領域開啟「AI＋X」的跨域整合機會。</p>
+        <div class="src">來源：<a href="https://taicatw.net/" target="_blank" rel="noopener">臺灣大專院校人工智慧學程聯盟（無日期）。TAICA</a></div>
       </div></div>
       <div class="node n-k12"><div class="card">
-        <div class="date"><span class="dt">115-02 至 116-12</span><span class="agency">教育部</span></div>
+        <div class="chips"><span class="chip-date">115-02 至 116-12</span><span class="chip-org">教育部</span></div>
         <h3>AI Di+ 實驗方案（偏鄉數位學伴）</h3>
-        <p>延續數位學伴計畫並加入 AI，招募培訓大學生擔任大學伴，與偏遠地區國中小學生透過因材網與 AI 學習夥伴進行課後學習。每位大學伴每學期至少 12 小時培訓，含 B5-1／B5-2 生成式 AI 工作坊；方案不補助電腦設備，資源集中於培訓與陪伴。</p>
-        <div class="src">來源：<a class="srclink" href="https://etutor.moe.gov.tw/bd/upfd/news/831f4118480c1484af9d1d7f0450a957.pdf" target="_blank" rel="noopener">教育部（2025）。115-116 年 AI Di+ 實驗方案大學實施計畫。</a></div>
+        <p>偏鄉端延續行之有年的數位學伴計畫並加入 AI。方案招募並培訓師資培育的大學生擔任大學伴，與偏遠地區國中小學生透過因材網與 AI 學習夥伴進行課後學習，每位大學伴每學期至少接受十二小時培訓，內容包含 B5-1 與 B5-2 生成式 AI 工作坊。方案明定不補助電腦設備，把資源集中在大學伴的培訓與陪伴：對小學伴提供課後自主學習支援，對大學伴則是任教前的一次數位教學演練。</p>
+        <div class="src">來源：<a href="https://etutor.moe.gov.tw/bd/upfd/news/831f4118480c1484af9d1d7f0450a957.pdf" target="_blank" rel="noopener">教育部（2025）。115-116 年 AI Di+ 實驗方案大學實施計畫</a></div>
       </div></div>
     </div>
   </section>
 
   <div class="foot">
-    製作：依各主責機關公開政策文件整理，供教育研究參考。原始 PDF 與各份結構化摘要存於 <code>各部會AI/來源/</code>。
+    製作：依各主責機關公開政策文件整理，供教育研究參考，各項說明忠於文件原文。原始 PDF 與各份結構化摘要存於 <code>各部會AI/來源/</code>。
   </div>
 
 </div>
